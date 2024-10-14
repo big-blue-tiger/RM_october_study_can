@@ -1,0 +1,3 @@
+D:/code/stm/test_can2/cmake-build-debug/CMakeFiles/test_can2.elf.dir
+D:/code/stm/test_can2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/code/stm/test_can2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
