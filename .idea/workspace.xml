@@ -23,7 +23,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1373e630-8211-4cdb-8379-d4cdcec698a1" name="更改" comment="" />
+    <list default="true" id="2150eab3-d2b0-4fdb-b82b-0586f8f05e4d" name="更改" comment="can_10.20">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,49 +36,54 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectApplicationVersion">
-    <option name="ide" value="CLion" />
-    <option name="majorVersion" value="2024" />
-    <option name="minorVersion" value="2.2" />
-    <option name="productBranch" value="Classic" />
-  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "big-blue-tiger"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/big-blue-tiger/RM_study.git",
+    "accountId": "3f88a281-8465-4119-8300-8c54bb67764f"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2nKYhBy5h1pgj4mJJcVfzyusUQr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2nTEyZaYQaHPjqzsC8uu3BhQqBK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake 应用程序.test_can2.elf.executor": "Run",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/code/stm/test_can2",
+    "last_opened_file_path": "D:/code/stm/Dbus",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\stm\test_can2\Core\Src" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="test_can2.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="test_can2" TARGET_NAME="test_can2.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="test_can2" RUN_TARGET_NAME="test_can2.elf">
       <method v="2">
@@ -87,23 +94,35 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="1373e630-8211-4cdb-8379-d4cdcec698a1" name="更改" comment="" />
-      <created>1728723351184</created>
+      <changelist id="2150eab3-d2b0-4fdb-b82b-0586f8f05e4d" name="更改" comment="" />
+      <created>1728911868074</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1728723351184</updated>
-      <workItem from="1728723352284" duration="7914000" />
-      <workItem from="1728899462287" duration="17000" />
-      <workItem from="1728906922351" duration="957000" />
+      <updated>1728911868074</updated>
+      <workItem from="1728911869680" duration="666000" />
+      <workItem from="1728988923564" duration="16000" />
+      <workItem from="1729426137002" duration="1042000" />
     </task>
+    <task id="LOCAL-00001" summary="can_10.20">
+      <option name="closed" value="true" />
+      <created>1729426501918</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729426501918</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VCPKGProject">
-    <isAutomaticCheckingOnLaunch value="false" />
-    <isAutomaticFoundErrors value="true" />
-    <isAutomaticReloadCMake value="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="can_10.20" />
+    <option name="LAST_COMMIT_MESSAGE" value="can_10.20" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

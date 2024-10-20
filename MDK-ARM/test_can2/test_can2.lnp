@@ -5,6 +5,7 @@
 "test_can2\can.o"
 "test_can2\stm32f4xx_it.o"
 "test_can2\stm32f4xx_hal_msp.o"
+"test_can2\callback.o"
 "test_can2\stm32f4xx_hal_can.o"
 "test_can2\stm32f4xx_hal_rcc.o"
 "test_can2\stm32f4xx_hal_rcc_ex.o"

@@ -57,14 +57,14 @@ float linearMapping(int in_,int in_min,int in_max,float out_min,float out_max){
   return out_min + (float) (in_ - in_min)*k;
 }
 struct M3508_Motor_v5 {
-  float ratio_;           // 电机减速比
+  float ratio_;           // 电机减�?�比
   float angle_fractional; // deg 输出端累计转动角度的小数部分
-  float angle_integer;	// 角度的整数部分
-  float delta_angle_;     // deg 输出端新转动的角度
-  float ecd_angle_;       // deg 当前电机编码器角度
-  float last_ecd_angle_;  // deg 上次电机编码器角度
+  float angle_integer;	// 角度的整数部�????
+  float delta_angle_;     // deg 输出端新转动的角�????
+  float ecd_angle_;       // deg 当前电机编码器角�????
+  float last_ecd_angle_;  // deg 上次电机编码器角�????
   float delta_ecd_angle_; // deg 编码器端新转动的角度
-  float rotate_speed_;    // dps 反馈转子转速
+  float rotate_speed_;    // dps 反馈转子转�??
   float current_;         // A   反馈转矩电流
   float temp_;            // °C  反馈电机温度
 };
@@ -83,14 +83,8 @@ void canRxMsgCallback_v5(const uint8_t rx_data[8]){
   motor.angle_fractional = motor.angle_fractional - (int) motor.angle_fractional;
 }
 
-CAN_RxHeaderTypeDef RxHeader;
 CAN_TxHeaderTypeDef TxHeader;
-uint8_t RxData[8];
-void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
-{
-  HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData);
-  canRxMsgCallback_v5(RxData);
-}
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -141,16 +135,16 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   CAN_FilterTypeDef sFilterConfig;
-  sFilterConfig.FilterBank = 0; // 选择过滤器编�?????
+  sFilterConfig.FilterBank = 0; // 选择过滤器编�?????????
   sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK; // 使用掩码模式
-  sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT; // 32位过�r���?
-  sFilterConfig.FilterIdHigh = 0x0000; // 设置滤波器ID高位（使�?????0x0000为例�?????
+  sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT; // 32位过�r���?????
+  sFilterConfig.FilterIdHigh = 0x0000; // 设置滤波器ID高位（使�?????????0x0000为例�?????????
   sFilterConfig.FilterIdLow = 0x0000; // 设置滤波器ID低位
-  sFilterConfig.FilterMaskIdHigh = 0x0000; // 设置掩码ID高位（使�?????0x0000，这意味�?????匹配�?????有）
+  sFilterConfig.FilterMaskIdHigh = 0x0000; // 设置掩码ID高位（使�?????????0x0000，这意味�?????????匹配�?????????有）
   sFilterConfig.FilterMaskIdLow = 0x0000; // 设置掩码ID低位
   sFilterConfig.FilterBank = 14;
-  sFilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0; // 将过滤器分配�????? FIFO0
-  sFilterConfig.FilterActivation = CAN_FILTER_ENABLE; // 启用过滤�?????
+  sFilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0; // 将过滤器分配�????????? FIFO0
+  sFilterConfig.FilterActivation = CAN_FILTER_ENABLE; // 启用过滤�?????????
   HAL_CAN_ConfigFilter(&hcan1,&sFilterConfig);
   HAL_CAN_Start(&hcan1);
   /* USER CODE BEGIN 2 */
@@ -162,23 +156,22 @@ int main(void)
   uint8_t TxMessage[8] = {0,0x90,0,0,0,0,0,0};
   while (1)
   {
-    TxMessage[0] += 1;
+		for(int i = 0;i<8;i++)
+			TxMessage[i] += i;
     TxHeader.ExtId = 0;
     TxHeader.StdId = 0x200; // 标准 ID
-    TxHeader.IDE = CAN_ID_STD; // 标准标识符
-    TxHeader.RTR = CAN_RTR_DATA; // 数据帧
+    TxHeader.IDE = CAN_ID_STD; // 标准标识�????
+    TxHeader.RTR = CAN_RTR_DATA; // 数据�????
     TxHeader.DLC = sizeof(TxMessage); // 数据长度
     TxHeader.TransmitGlobalTime = DISABLE;
     uint32_t TxMailbox;
-    HAL_CAN_AddTxMessage(&hcan1,&TxHeader,TxMessage, &TxMailbox);
+    if(HAL_CAN_AddTxMessage(&hcan1,&TxHeader,TxMessage, &TxMailbox)!=HAL_OK)
+    {
+      HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,1);
+    }
+    HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,0);
 
-    HAL_Delay(50);
-    // if ((HAL_CAN_AddTxMessage(&hcan1,&TxHeader,TxMessage, &TxMailbox)) != HAL_OK)
-    // {
-    //   HAL_StatusTypeDef ret = HAL_CAN_AddTxMessage(&hcan1,&TxHeader,TxMessage, &TxMailbox);
-    //   HAL_CAN_ActivateNotification(&hcan1,CAN_IT_RX_FIFO0_MSG_PENDING);
-    //   HAL_Delay(50000);
-    // }
+    HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
